@@ -1,0 +1,98 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMHmS0gucZ5Ff5DecVVfdvh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Amanpatra99/Amanpatra99/blob/main/Copy_of_Untitled1.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "I9R7i0dzsHCT",
+        "outputId": "d506809f-6b5f-4efd-8a22-8eef9e3e3c28"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hi, I'm your chatbot. How can I assist you?\n",
+            ">Hii\n",
+            "Hey there\n",
+            ">Bye\n",
+            "None\n"
+          ]
+        }
+      ],
+      "source": [
+        "\n",
+        "import nltk\n",
+        "from nltk.chat.util import Chat, reflections\n",
+        "\n",
+        "# Define patterns and responses\n",
+        "pairs = [\n",
+        "    [\n",
+        "        r\"my name is (.*)\",\n",
+        "        [\"Hello %1, How can I help you today?\",]\n",
+        "    ],\n",
+        "    [\n",
+        "        r\"hi|hey|hello\",\n",
+        "        [\"Hello\", \"Hey there\",]\n",
+        "    ],\n",
+        "    [\n",
+        "        r\"what is your name ?\",\n",
+        "        [\"I am a chatbot created by [Your Name].\",]\n",
+        "    ],\n",
+        "    [\n",
+        "        r\"how are you ?\",\n",
+        "        [\"I'm doing good. How about you?\",]\n",
+        "    ],\n",
+        "    [\n",
+        "        r\"sorry (.*)\",\n",
+        "        [\"Its alright\", \"Its OK, never mind\",]\n",
+        "    ],\n",
+        "    [\n",
+        "        r\"I am (.*) doing good\",\n",
+        "        [\"Nice to hear that!\", \"Alright, great!\"]\n",
+        "    ],\n",
+        "    [\n",
+        "        r\"quit\",\n",
+        "        [\"Bye, take care. See you soon :) \", \"It was nice talking to you. Goodbye!\"]\n",
+        "    ],\n",
+        "]\n",
+        "\n",
+        "# Create the chatbot\n",
+        "chatbot = Chat(pairs, reflections)\n",
+        "\n",
+        "# Start conversation\n",
+        "print(\"Hi, I'm your chatbot. How can I assist you?\")\n",
+        "chatbot.converse()"
+      ]
+    }
+  ]
+}
